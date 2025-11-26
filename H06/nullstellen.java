@@ -15,6 +15,7 @@ public class nullstellen{
     SquareFun squareFun(){
         return new SquareFun(0, 0, 0);
     }
+    
     public static float sqrt(float uG, float oG, float x){
         float m, epsilon = 1e-3f;
         m = (uG + oG) / 2;
