@@ -9,7 +9,7 @@ public class MinMaxTree {
     //what is the current state
     private GameState state ; //anzahl der leeren spielfelder
     //Whos turn, Zug
-    private final boolean min ;
+    private final boolean min;
     private MinMaxTree [] successors ;
     public MinMaxTree ( boolean min , GameState state ){
         this . min = min ;
@@ -62,7 +62,25 @@ public class MinMaxTree {
         return u_minmax;
     }
 
-    private score(){
+    private int score(){
+        GameState[] u_state = state.getSuccessors(min);
+        if(u_state.length == 0) return state.evaluate();
+        int best_value;
+        if(min) {
+            best_value = 100;
+            for(MinMaxTree successor : this.successors){
+                best_value = Math.min(best_value , successor.score());
+            }
+        }
+        //if maxs turn
+        else {
+            best_value = -100;
+            for(MinMaxTree successor : this.successors){
+                best_value = Math.max(best_value , successor.score());
+            }
+
+        }
+        return best_value;
         /* if there are no more moves to make call evaluate to return die bewertung duch game state
         Ansonsten bilde eine Bewertung, erlaubt ist die min max von der math library
 
@@ -73,5 +91,40 @@ public class MinMaxTree {
         unentschieden: 0
         if das Spiel nocht nicht vorbei ist, wird das Ergebnis einer Nachfolger zugewiesen
          */
+    }
+
+    public MinMaxTree makeMove(){
+        if(successors == null){
+            return null;
+        }
+        MinMaxTree cach = null;
+        int best_value = min ? Integer.MAX_VALUE : Integer.MIN_VALUE;
+        int temp;
+        if(min){
+            for(MinMaxTree successor : successors){
+                temp = successor.score();
+                if(best_value > temp){
+                    best_value = temp;
+                    cach = successor;
+                }
+                if(temp == -1){
+                    return successor;
+                }
+
+            }
+        }
+        else{
+            for(MinMaxTree successor : successors){
+                temp = successor.score();
+                if(best_value < temp){
+                    best_value = temp;
+                    cach = successor;
+                }
+                if(temp == 1){
+                    return successor;
+                }
+            }
+        }
+        return cach;
     }
 }
