@@ -1,4 +1,5 @@
 public class PolyFun {
+    //THIS IS SO CONFUSING I CANTTTTT
     double c;
     int n;
     public double findExtremum(double l, double r){
