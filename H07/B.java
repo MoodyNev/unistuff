@@ -3,6 +3,8 @@ public class B extends A {
 	public int y = 1;
 	
 	public B () { // Signatur: B()
+		//PSYCHO JAVA PUTS A `super()` HERE
+		//SILLY AAH LANGUAGE
 		x++;
 	}
 	public B (float x) { // Signatur: B(F)
