@@ -39,6 +39,7 @@ public class Punkt {
     
     //formel für die abstandberechnung: d = \sqrt((x1-x2)² + (y1-y2)²)
     public BigDecimal abstand(Punkt other){
+        //geht noch kürzer, du muss nicht alles deklarieren
         BigDecimal x1 = this.getX();
         BigDecimal y1 = this.getY();
         BigDecimal x2 = other.getX();
@@ -51,6 +52,9 @@ public class Punkt {
     //please dont judge me for the programmer i am, giving my best to learn
     @Override
     public boolean equals(Object obj){
+        if(!(obj instanceof Punkt)){
+            return false;
+        }
         BigDecimal x1 = this.getX();
         BigDecimal y1 = this.getY();
         BigDecimal x2 = ((Punkt) obj).getX();
