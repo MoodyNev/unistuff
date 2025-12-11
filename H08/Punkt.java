@@ -57,4 +57,8 @@ public class Punkt {
         BigDecimal y2 = ((Punkt) obj).getY();
         return BigDecimalUtility.equalValues(x1,x2) && BigDecimalUtility.equalValues(y1,y2);
     }
+
+    public String toString(){
+        return "(" + xKoordinate + "," + yKoordinate + ")";
+    }
 }

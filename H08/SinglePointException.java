@@ -7,7 +7,7 @@ public class SinglePointException extends Exception {
 
     @Override
     public String toString(){
-        return "Der Punkt" + exceptionPunkt + "wurde zweimal benutzt.";
+        return "Doppelte Benutzung des Punktes" + exceptionPunkt.toString();
     }
     
 }
