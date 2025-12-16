@@ -1,4 +1,4 @@
-public non-sealed class Waschbaer extends Tier {
+public final class Waschbaer extends Tier {
     Waschbaer(String name, int alter){
         super(name,alter);
         this.name = name;

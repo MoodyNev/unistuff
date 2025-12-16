@@ -1,4 +1,4 @@
-public non-sealed class Hase extends Tier {
+public final class Hase extends Tier {
     Hase(String name, int alter){
         super(name,alter);
         this.name = name;
