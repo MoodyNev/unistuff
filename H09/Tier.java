@@ -7,9 +7,9 @@
  * und eine toString methode
  * keine unterklassen von den vier implementierten klassen
 **/
-public sealed abstract class Tier permits Hase, Biber, Waschbaer {
-    String name;
-    int alter;
+public abstract sealed class Tier permits Hase, Biber, Waschbaer { //nicht abstrakt?
+    protected String name;
+    protected int alter;
 
     Tier(String name, int alter){
         this.name = name;
@@ -26,6 +26,6 @@ public sealed abstract class Tier permits Hase, Biber, Waschbaer {
 
     @Override
     public String toString(){
-        return "(Alter: " + alter + ")";
+        return this.getClass().getCanonicalName() + " " + this. getName() + " (Alter: " + alter + ")"; //wwoowowo new function
     }
 }

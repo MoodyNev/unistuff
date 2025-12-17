@@ -8,8 +8,11 @@ import java.util.*;
  * abholen throws leerefalleexception
  * 
  */
-public final class GefrorenerSee extends Falle<Tier> {
-    private final Set<Tier> see = new HashSet<>();  //nur weil debugger es so wollte, und es ergibt sinn
+public non-sealed class GefrorenerSee extends Falle<Tier> {
+    private Set<Tier> see = new HashSet<>();  //nur weil debugger es so wollte, und es ergibt sinn
+
+    public GefrorenerSee() {
+    }
 
     @Override
     public void fange(Tier t){

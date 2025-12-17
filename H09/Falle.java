@@ -6,7 +6,11 @@ import java.util.*;
  * zwei methode: fange und set<T> abholen
 */
 public abstract sealed class Falle<T extends Tier> permits Kaefig, GefrorenerSee, Baerenfalle {
-    
+
+    public Falle() {
+    }
+
+    //wichtig zu haben
     abstract void fange(T t);
 
     abstract Set<T> abholen() throws LeereFalleException;

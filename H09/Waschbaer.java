@@ -1,22 +1,22 @@
 public final class Waschbaer extends Tier {
     Waschbaer(String name, int alter){
         super(name,alter);
-        this.name = name;
-        this.alter = alter;
+        //this.name = name; hier ist doppelt gemoppelt!!! du brauchst nicht zweimal zu speichern
+        //this.alter = alter;
     }
 
     @Override
     int getAlter(){
-        return alter;
+        return super.getAlter();
     }
 
     @Override
     String getName(){
-        return name;
+        return super.getName();
     }
 
     @Override
     public String toString(){
-        return "Waschbaer " + name + " (Alter: " + alter + ")";
+        return super.toString();
     }
 }

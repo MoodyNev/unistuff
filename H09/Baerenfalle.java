@@ -5,25 +5,25 @@ import java.util.*;
  * 
  * 
  */
-public non-sealed class Baerenfalle<T extends Tier> extends Falle<T> {
+public final class Baerenfalle<T extends Tier> extends Falle<T> {
 
     private T objekt;
 
+    //old java was dumb so we keep doing unncessary stuff
+    public Baerenfalle() {
+    }
+
     @Override
     public void fange(T t){
-        if(t == null) return;
-        objekt = t;
-
+        if(objekt == null) objekt = t;
     }
 
     @Override
     public Set<T> abholen() throws LeereFalleException{ 
-        //gemini did i dont still understand this bit
+        //weil abstrakte falle, das so vorgegeben hat
         if(objekt == null) throw new LeereFalleException();
         Set<T> setT = new HashSet<>();
         setT.add(objekt);
-
-        this.objekt = null;
         return setT;
     }
 

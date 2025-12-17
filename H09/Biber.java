@@ -1,22 +1,20 @@
 public final class Biber extends Tier{
     Biber(String name, int alter){
-        super(name,alter); //ok... i have no idea why java tries super() instead of the actual constructor
-        this.name = name;
-        this.alter = alter;
+        super(name,alter); //ok... i have no idea why java tries super() instead of the actual constructor - auto heißt ohne parameter
     }
 
     @Override
     int getAlter(){
-        return alter;
+        return super.getAlter();
     }
 
     @Override
     String getName(){
-        return name;
+        return super.getName();
     }
 
     @Override
     public String toString(){
-        return "Biber " + name + " (Alter: " + alter + ")";
+        return super.toString();
     }
 }

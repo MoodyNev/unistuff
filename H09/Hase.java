@@ -1,22 +1,20 @@
 public final class Hase extends Tier {
     Hase(String name, int alter){
         super(name,alter);
-        this.name = name;
-        this.alter = alter;
     }
 
     @Override
     int getAlter(){
-        return alter;
+        return super.getAlter();
     }
 
     @Override
     String getName(){
-        return name;
+        return super.getName();
     }
 
     @Override
     public String toString(){
-        return "Hase " + name + " (Alter: " + alter + ")";
+        return super.toString();
     }
 }
