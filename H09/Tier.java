@@ -26,6 +26,6 @@ public sealed abstract class Tier permits Hase, Biber, Waschbaer {
 
     @Override
     public String toString(){
-        return name + " ist " + alter + " Jahre alt.";
+        return "(Alter: " + alter + ")";
     }
 }

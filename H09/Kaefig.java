@@ -1,3 +1,6 @@
+import java.util.*;
+
+
 /** Aufgabe e:
  * nicht mehr genrisch
  * unbegrenzter container für alle Tiere
@@ -9,9 +12,31 @@
  * 
  * 
  */
-public final class Kaefig extends Falle<Tier> {
+public non-sealed class Kaefig extends Falle<Tier> {
+    private Set<Tier> kaefig = new HashSet<>();
+
     @Override
     public void fange(Tier t){
-        
+        kaefig.add(t);
+    }
+
+    @Override
+    public Set<Tier> abholen() throws LeereFalleException{
+        if(kaefig.isEmpty()) throw new LeereFalleException();
+        for(Tier tier : kaefig){
+            if(tier instanceof Waschbaer){
+                fressen();
+                break;
+            }
+        }
+        return kaefig;
+    }
+
+    public void fressen(){         //!!!! why are you working brother??
+        for(Tier i : kaefig){
+            if(i instanceof Hase){
+                kaefig.remove(i);
+            }
+        }
     }
 }

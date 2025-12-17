@@ -3,5 +3,9 @@
  * 
  */
 public class LeereFalleException extends RuntimeException {
+
+    public LeereFalleException() {
+    }
+    
     
 }

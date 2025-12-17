@@ -5,16 +5,18 @@ public final class Waschbaer extends Tier {
         this.alter = alter;
     }
 
+    @Override
     int getAlter(){
         return alter;
     }
 
+    @Override
     String getName(){
         return name;
     }
 
     @Override
     public String toString(){
-        return name + " ist " + alter + " Jahre alt.";
+        return "Waschbaer " + name + " (Alter: " + alter + ")";
     }
 }

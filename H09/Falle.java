@@ -1,3 +1,4 @@
+import java.util.*;
 /** Aufgabe c:
  * Falle<T> für beliebige Fälle, die Tiere vom Typ T fangen können
  * in falle klasse darf keine obejkte erstellt werden
@@ -8,5 +9,5 @@ public abstract sealed class Falle<T extends Tier> permits Kaefig, GefrorenerSee
     
     abstract void fange(T t);
 
-    abstract java.util.Set<T> abholen() throws LeereFalleException;
+    abstract Set<T> abholen() throws LeereFalleException;
 }
