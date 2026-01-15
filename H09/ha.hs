@@ -11,5 +11,3 @@ append (x:xs) ys = x:append xs ys
 
 doubleList :: [Int] -> [Int]
 doubleList xs = append xs xs
-
-test :: 
