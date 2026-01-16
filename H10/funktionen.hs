@@ -37,7 +37,6 @@ binRep n = (sign, binar betrag)
     binar 0 = []
     binar x = binar (div x 2) ++ [rem x 2]
 
-
 existsPath :: [(Int,Int)] -> Int -> Int -> Bool
 existsPath _ x y | x == y = True
 
