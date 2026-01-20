@@ -27,8 +27,8 @@ divisibleAux :: Int -> Int -> Bool
 divisibleAux teiler x = x `mod` teiler == 0
 --                      mod x teiler == 0
 
-divisibleBy :: Int -> List Int -> List Int
-divisibleBy teiler xs = filterList(\x -> divisibleAux teiler) xs
+--divisibleBy :: Int -> List Int -> List Int
+--divisibleBy teiler xs = filterList(\x -> divisibleAux teiler) xs
 
 --AUFGABE C
 foldListr :: (a -> b -> b) -> b -> List a -> b
@@ -37,7 +37,7 @@ foldListr op z (Cons x xs) = x `op` (foldListr op z xs)
 
 foldListl :: (a -> b -> b) -> b -> List a -> b
 foldListl _ z Nil = z
-foldListl op z (Cons x xs) = foldListl op (z `op` x) xs
+--foldListl op z (Cons x xs) = foldListl op (z `op` x) xs
 
 
 -- foldr (-) 0 [3,5,7] 
@@ -48,5 +48,5 @@ foldListl op z (Cons x xs) = foldListl op (z `op` x) xs
 -- Ausgabe: -15
 
 -- AUFGABE E
-mapList :: (a -> b) -> List a -> List b
-mapList f xs = foldListr (\x acc -> (f x) `Cons` acc) [] Nil xs
+--mapList :: (a -> b) -> List a -> List b
+--mapList f xs = foldListr (\x acc -> (f x) `Cons` acc) [] Nil xs
