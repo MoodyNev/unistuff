@@ -1,0 +1,13 @@
+Aufgabe b:
+?- hatRang(X,assistent).
+X = mlr ;
+X = jck ;
+X = nlo ;
+X = eme.
+
+Aufgabe d:
+?- bossVon(jkr, _).
+true ;
+true ;
+true ;
+false.
