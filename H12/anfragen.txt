@@ -1,13 +1,23 @@
-Aufgabe b:
+Aufgabe 3 b:
 ?- hatRang(X,assistent).
 X = mlr ;
 X = jck ;
 X = nlo ;
 X = eme.
 
-Aufgabe d:
+Aufgabe 3 d:
 ?- bossVon(jkr, _).
 true ;
 true ;
 true ;
+false.
+
+Aufgabe 4 f:
+i mean this is what i gave but, this guy can't be the grandparent of himself
+if we dont add the children to the list
+?- grandparent(X,Y).
+X = daugher,
+Y = daughter ;
+X = father,
+Y = daughter ;
 false.

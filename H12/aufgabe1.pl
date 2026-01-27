@@ -14,4 +14,5 @@ bossVon(X,Y) :- hatRang(X, hiwi), hatRang(Y, student).
 
 hatGleichenRang(X,Y) :- bossVon(X, A), bossVon(Y,A).
 
-vorgesetzt
+/*idk i didnt do anything special here so this feels too less take a look again*/
+vorgesetzt(X,Y) :- bossVon(X,Y).
