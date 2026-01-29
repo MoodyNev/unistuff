@@ -12,9 +12,8 @@ married(me,widow).
 married(daughter,father).
 married(father,daughter).
 
-parent(me, daughter).
-parent(daugher, me).
-parent(father, me).
-parent(widow, daughter).
+leiblich(father, me).
+leiblich(widow, daughter).
+parent(X,Y) :- married(X,Z), leiblich(Z,Y).
 
 grandparent(X,Y) :- parent(X,A) , parent(A,Y).

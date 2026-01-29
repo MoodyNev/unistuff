@@ -1,3 +1,4 @@
+person(X).
 hatRang(jgi, professor).
 hatRang(mlr, assistent).
 hatRang(jck, assistent).
@@ -16,3 +17,4 @@ hatGleichenRang(X,Y) :- bossVon(X, A), bossVon(Y,A).
 
 /*idk i didnt do anything special here so this feels too less take a look again*/
 vorgesetzt(X,Y) :- bossVon(X,Y).
+vorgesetzt(X,Y) :- bossVon(X,Y),vorgesetzt(F,Y).
