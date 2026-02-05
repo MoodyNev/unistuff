@@ -4,7 +4,9 @@
 %weirdly dont do `;` with this idk the reason yet,
 %but i think it bruteforces its way to the next function
 factorization(1,[]).
-factorization(N,Fs) :- [divideNumberWith(N,D,Fs)|Fs].
+factorization(N,Fs) :- 
+N > 1 %zur Sicherheit
+divideNumberWith(N,2,Fs).
 
 %!!!!I DONT STILL KNOW HOW TO USE LISTS STILL HELP, WE ARE DIVING INTO ADDING LATER
 
@@ -12,9 +14,21 @@ factorization(N,Fs) :- [divideNumberWith(N,D,Fs)|Fs].
 divideNumberWith(1,D,[]).
 divideNumberWith(N,D,[D|Fs]) :-
 0 is (N mod D),
-M is (N div D),
-divideNumberWith(M, D, Fs).
+NewN is (N div D),
+divideNumberWith(NewN, D, Fs).
 
+%ok this is really smart and way shorter than the other functions i programmed
+%after discussing with the ai a little i realized i dont need a seperate function to calculate the next prime
+%because if a number is already for example divided by all 2s this means, it is naturally not going to divide 4
+% which means it will force jump to next prime, never thought of this smart thing, i love maths
+divideNumberWith(N,D,Fs) :-
+Rest is N mod D,
+Rest > 0,
+NewD is D + 1,
+divideNumberWith(N, NewD, Fs).
+
+%AUFGABENTEIL B
+isPrime(N) :- factorization(N,[N]).
 %i am not going to consider the case where the number is one
 %because factorization automatically covers that
 
