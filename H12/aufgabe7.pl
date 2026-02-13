@@ -45,6 +45,7 @@ add(X, s(Y), s(Z)) :- add(X, Y, Z).
 % Teilaufgabe b)
 append([], YS, YS).
 append([X|XS], YS, [X|Res]) :- append(XS, YS, Res).
+
 my_append(nil, YS, YS).
 my_append(YS,nil,YS).
 my_append(cons(X,XS), YS, cons(X,Res)) :- my_append(XS, YS, Res).
